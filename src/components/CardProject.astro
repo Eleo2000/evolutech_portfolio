@@ -9,19 +9,19 @@ interface Props {
 const { image, title, details,url } = Astro.props;
 ---
 
-<div class=" carda w-[500px]  h-[300px] bg-white border-[2px] border-gray-500 hover:shadow-t-orange hover:border-orange-200 transition-all">
+<div class=" carda w-[500px]  h-[400px] bg-white border-[2px] border-gray-500 hover:shadow-t-orange hover:border-orange-200 transition-all">
 	<div class="h-[40%] border-b overflow-hidden">
 		<img src={image} alt={title} class="object-cover" srcset="">
 	</div>
-	<div class="flex flex-col bg-gray-50  h-[60%] px-3 py-8 overflow-hidden whitespace-nowrap  overflow-ellipsis relative ">
+	<div class="flex flex-col bg-gray-50  h-[50%] px-3 py-8  relative ">
 
 		{ !url ?
-			<span class="font-bold text-xl mb-5 truncate titra w-max"> {title} </span>:
-			<a class="text-xl mb-5   titra w-max hover:underline" target="_blank" href={url}> { title } </a>
+			<span class="font-bold text-xl mb-5 titra w-max"> {title} </span>:
+			<a class="text-xl mb-5 titra hover:underline" target="_blank" href={url}> { title } </a>
 		}
 		
 
-		<p class="flex-grow text-sm text-container truncate ">
+		<p class="flex-grow text-sm text-container  ">
 			{details}
 		</p>
 	</div>
@@ -87,6 +87,7 @@ const { image, title, details,url } = Astro.props;
  @media only screen and (max-width: 550px) {
 	.carda {
 		width: 80vw;
+		height:auto;
 	}
 }
 </style>
