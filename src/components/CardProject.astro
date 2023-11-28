@@ -17,7 +17,7 @@ const { image, title, details,url } = Astro.props;
 
 		{ !url ?
 			<span class="font-bold text-xl mb-5"> {title} </span>:
-			<a class="font-bold text-xl mb-5" target="_blank" href={url}> { title } </a>
+			<a class="text-xl mb-5 underline-text-a" target="_blank" href={url}> { title } </a>
 		}
 		
 
