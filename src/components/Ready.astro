@@ -1,0 +1,252 @@
+
+<div class="portal">
+    <div class="titra-portal text-center text-2xl uppercase">
+      Etes-vous prEt A embrasser l'aventure qui libErera tout votre potentiel ?
+    </div>
+
+    <div class="content-portal">
+      <div class="portal-enter">
+        <div class="back imagex"></div>
+        <div class="arbre imagex"></div>
+        <div class="terre-p imagex"></div>
+        <div class="terre-r imagex"></div>
+        <div class="terre-l imagex"></div>
+        <div class="perso imagex"></div>
+      </div>
+    </div>
+</div>
+
+<script>
+    import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+    gsap.from('.perso', {
+      scale: 1,
+      y: 100,
+    });
+
+    gsap.to('.perso', {
+      scale: 1.4,
+      y: 0,
+      duration: 0.4,
+      scrollTrigger: {
+        trigger: '.content-portal',
+        start: 'top center',
+        end: 'bottom center',
+        scrub: 1.9,
+        markers: true,
+      },
+    });
+
+    gsap.from('.terre-l , .terre-r  ', {
+      scale: 1,
+      y: 20,
+    });
+
+    gsap.to('.terre-l , .terre-r ', {
+      scale: 1.2,
+      duration: 0.8,
+      y: 0,
+      stagger: 0.12,
+      scrollTrigger: {
+        trigger: '.content-portal',
+        start: 'top center',
+        end: 'bottom bottom',
+        scrub: 1.9,
+        markers: true,
+      },
+    });
+
+    gsap.from('.arbre  ', {
+      scale: 1,
+      x: 20,
+      y: 50,
+    });
+
+    gsap.to('.arbre ', {
+      scale: 1.1,
+      duration: 0.9,
+      y: 50,
+      x: -20,
+      stagger: 0.12,
+      scrollTrigger: {
+        trigger: '.content-portal',
+        start: 'top center',
+        end: 'bottom center',
+        scrub: 1.9,
+        markers: false,
+      },
+    });
+</script>
+
+<style >
+  
+    
+
+    .portal{
+        transform: translateY(0);
+        display: grid;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    
+    .content-portal{
+        z-index: 66;
+        display: grid;
+        justify-items: center;
+        
+        
+        overflow: hidden;
+    }
+    .titra-portal{
+        
+    
+        display: grid;
+        background-color: rgb(255, 255, 255);
+    
+        padding: 36px;
+        position: relative;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        justify-self: center;
+    }
+    .titra-portal::before{
+        z-index: -1;
+       
+        position: absolute;
+        background-color: rgba(235, 95, 1, 0.308);
+        content:"";
+        height: 4px;
+        width: 100vw;
+    }
+    
+    .portal-enter{
+        display: grid;
+        position: relative;
+        aspect-ratio: 16/9;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .imagex{
+        position: absolute;
+        width: max-content;
+        height: max-content;
+        transform-origin: center;
+    }
+    
+    .perso{
+        width: 100%;
+        height: 100%;
+        background: url(../public/img/perso.png);
+        
+        background-repeat: no-repeat;
+        background-position: bottom center;
+    
+    }
+    .terre-l{
+        
+        width: 100%;
+        height: 100%;
+        background: url(../public/img/terre-l.png);
+        background-color: rgba(250, 235, 215, 0);
+        background-repeat: no-repeat;
+        background-position: bottom left;
+       
+    
+    }
+    .terre-r{
+        
+        width: 100%;
+        height: 100%;
+        background: url(../public/img/terre-r.png);
+        background-color: rgba(250, 235, 215, 0);
+        background-repeat: no-repeat;
+        background-position: bottom right;
+       
+    
+    }
+    
+    .arbre{
+        
+        width: 100%;
+        height: 100%;
+        background: url(../public/img/arbre.png);
+        background-color: rgba(250, 235, 215, 0);
+        background-repeat: no-repeat;
+        background-position: 20% 80%;
+       
+    
+    }
+    .back{
+        
+        width: 100%;
+        height: 100%;
+        background: url(../public/img/bak.png);
+        background-color: rgba(250, 235, 215, 0);
+        background-repeat: no-repeat;
+        
+        background-position: bottom center;
+       
+    
+    }
+    
+    /*****responsive portal ***/
+    
+    @media screen and (max-width: 1330px) {
+        .portal-enter{
+            
+            width: 100%!important;
+            justify-content: center;
+         
+        }
+    
+    
+      }
+    @media screen and (max-width: 960px) {
+        .portal-enter{
+            
+            
+            aspect-ratio: 4/3;
+        }
+    
+    
+      }
+    @media screen and (max-width: 850px) {
+        .portal-enter{
+            
+            
+            aspect-ratio: 3/3;
+        }
+    
+    
+      }
+    @media screen and (max-width: 660px) {
+        .portal-enter{
+            
+            
+            aspect-ratio: 1/1;
+        }
+    
+        .terre-l,.arbre,.imagex,.terre-r{
+            background-size: contain;
+        }
+    
+        .perso{
+            background-size: 40%;
+        }
+    
+      }
+    
+    /*****Fin responsive portal****/
+    
+      </style>
+
+
+
