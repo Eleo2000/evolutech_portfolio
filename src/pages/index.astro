@@ -6,7 +6,7 @@ import Footer from"../components/Footer.astro";
 
 <Layout title="Evolutech Portfolio">
 	<div class="d-hero">
-		<div class="flex flex-col justify-center font-bold items-center text-8xl mb-5 text-center">
+		<div class=" top-hero-text flex flex-col justify-center font-bold items-center text-8xl mb-5 text-center">
 			<span class="underline-text"> Nous sommes </span>
 			<span class="gradient-text-1"> EVOLUTECH </span>
 		</div>
@@ -14,7 +14,7 @@ import Footer from"../components/Footer.astro";
 			<p> Bienvenue chez Evolutech, où l'innovation devient réalité numérique. Nous façonnons le futur du développement logiciel, créant des solutions sur mesure qui dépassent les attentes, repoussant les limites technologiques avec excellence. </p>
 		</div>
 		<div class="flex justify-center items-center">
-			<a class="bt-see-project text-lg" href="#d-projects"> Voir nos projets </a>
+			<a class="bt-see-project text-lg  text-center" href="#d-projects"> Voir nos projets </a>
 			<a href="#contacts" class=" ml-10 border-gradient border-gradient-purple p-2 hover:bg-gray-100"> Nous Contacter </a>
 		</div>
 	</div>
@@ -22,7 +22,7 @@ import Footer from"../components/Footer.astro";
 	<!-- Nos projets -->
 	<div class="d-projects" id="d-projects">
 
-		<span class="text-6xl mb-10 text-center"> Découvrez nos projets </span>
+		<span class="text-6xl mb-10 text-center project-title"> Découvrez nos projets </span>
 		<p class="mb-10 w-[50%] text-xl text-center"> Nous Créons des sites qui conviennent le mieux pour nos clients </p>
 		<div class="card-content flex flex-wrap justify-center items-center mb-24 mt-8">
 			<!-- Liste des projets -->
@@ -73,5 +73,19 @@ import Footer from"../components/Footer.astro";
 		grid-template-columns: repeat(auto-fill,minmax(500px,1fr));
 		gap: 12px;
 		row-gap: 64px;
+	}
+
+	@media only screen and (max-width: 800px) {
+		.top-hero-text  {
+			@apply text-6xl;
+		}
+		.project-title  {
+			@apply text-4xl;
+		}
+	}
+	@media only screen and (max-width: 420px) {
+		.top-hero-text  {
+			@apply text-4xl;
+		}
 	}
 </style>

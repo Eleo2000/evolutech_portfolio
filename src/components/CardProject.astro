@@ -9,23 +9,84 @@ interface Props {
 const { image, title, details,url } = Astro.props;
 ---
 
-<div class="w-[500px] h-[300px] bg-white border-[2px] border-gray-500 hover:shadow-t-orange hover:border-orange-200 transition-all">
+<div class=" carda w-[500px]  h-[300px] bg-white border-[2px] border-gray-500 hover:shadow-t-orange hover:border-orange-200 transition-all">
 	<div class="h-[40%] border-b overflow-hidden">
 		<img src={image} alt={title} class="object-cover" srcset="">
 	</div>
-	<div class="flex flex-col bg-gray-50  h-[60%] px-3 py-8  ">
+	<div class="flex flex-col bg-gray-50  h-[60%] px-3 py-8 overflow-hidden whitespace-nowrap  overflow-ellipsis relative ">
 
 		{ !url ?
-			<span class="font-bold text-xl mb-5"> {title} </span>:
-			<a class="text-xl mb-5 underline-text-a hover:underline" target="_blank" href={url}> { title } </a>
+			<span class="font-bold text-xl mb-5 truncate titra w-max"> {title} </span>:
+			<a class="text-xl mb-5   titra w-max hover:underline" target="_blank" href={url}> { title } </a>
 		}
 		
 
-		<p class="flex-grow text-sm">
+		<p class="flex-grow text-sm text-container truncate ">
 			{details}
 		</p>
 	</div>
 </div>
 
 <style>
+	.titra{
+		position: relative;
+		z-index: 10;
+		background-color: rgba(255, 0, 0, 0);
+	}
+
+	.titra::before{
+		
+		content: '';
+		width: 100%;
+		height: 20%;
+		bottom: 0;
+		left: 0;
+		z-index: 0;
+		
+		/* background-color: rgb(255, 81, 0);  */
+		position: absolute;
+		opacity: 0.3;
+
+		/* background-color: #CA4246; */
+		
+		/* Create the gradient. */
+		background-image: linear-gradient(
+				45deg,
+				#CA4246 16.666%, 
+				#E16541 16.666%, 
+				#E16541 33.333%, 
+				#F18F43 33.333%, 
+				#F18F43 50%, 
+				#8B9862 50%, 
+				#8B9862 66.666%, 
+				#476098 66.666%, 
+				#476098 83.333%, 
+				#A7489B 83.333%);
+		
+		/* Set the background size and repeat properties. */
+		background-size: 100%;
+		background-repeat: repeat;
+		transition: 0.16s ease-in-out;
+		filter: blur(00px);
+		
+	}
+	.titra:hover::before{
+		
+		
+		/* background-color: rgb(255, 81, 0);  */
+		position: absolute;
+		opacity: 1;
+
+		
+		filter: blur(10px);
+		
+	}
+	
+
+
+ @media only screen and (max-width: 550px) {
+	.carda {
+		width: 80vw;
+	}
+}
 </style>
