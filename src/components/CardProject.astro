@@ -1,0 +1,31 @@
+---
+interface Props {
+	title: string;
+	image: string;
+	details: string;
+	url?:string;
+}
+
+const { image, title, details,url } = Astro.props;
+---
+
+<div class="w-[500px] h-[300px] bg-white border border-gray-500">
+	<div class="h-[40%] border-b overflow-hidden">
+		<img src={image} alt={title} class="object-cover" srcset="">
+	</div>
+	<div class="flex flex-col bg-gray-50  h-[60%] px-3 py-8">
+
+		{ !url ?
+			<span class="font-bold text-xl mb-5"> {title} </span>:
+			<a class="font-bold text-xl mb-5" target="_blank" href={url}> { title } </a>
+		}
+		
+
+		<p class="flex-grow text-sm">
+			{details}
+		</p>
+	</div>
+</div>
+
+<style>
+</style>
