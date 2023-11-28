@@ -7,7 +7,7 @@ export default {
 				't-orange': '0 35px 60px -15px rgba(234, 88, 12, 0.6)',
 				't-orange-f': '0 25px 60px -15px rgba(234, 88, 12, 0.3)',
 			}
-		},
+		}
 	},
 	plugins: [],
 }
