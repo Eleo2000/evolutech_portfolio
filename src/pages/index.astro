@@ -2,6 +2,7 @@
 import CardProject from "../components/CardProject.astro";
 import Layout from "../layouts/Layout.astro";
 import Footer from"../components/Footer.astro";
+import Scroll from"../components/Scroll.astro";
 ---
 
 <Layout title="Evolutech Portfolio">
@@ -19,8 +20,10 @@ import Footer from"../components/Footer.astro";
 		</div>
 	</div>
 
+	<Scroll client:load/>
+
 	<!-- Nos projets -->
-	<div class="d-projects" id="d-projects">
+	<div class="d-projects " id="d-projects">
 
 		<span class="text-6xl mb-10 text-center project-title"> Découvrez nos projets </span>
 		<p class="mb-10 w-[50%] text-xl text-center"> Nous Créons des sites qui conviennent le mieux pour nos clients </p>
@@ -31,6 +34,8 @@ import Footer from"../components/Footer.astro";
 			<CardProject url="http://reseau.permis-conduire-mg.com" image="images/project-image-3.png" title="Réseau de permis de conduire" details="Un réseau de permis de conduire est un système interconnecté de gestion des licences de conduire, permettant la délivrance, la vérification et la mise à jour des informations liées aux conducteurs." />
 		</div>
 	</div>
+
+
 	<Footer/>
 </Layout>
 
